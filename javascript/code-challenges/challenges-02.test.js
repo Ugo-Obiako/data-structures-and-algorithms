@@ -9,16 +9,15 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
-  let exponentArr = []
-  arr.forEach(value => {
+  let exponentArr = [];
+  arr.forEach((value) => {
     const itemExponeent = Math.pow(value, 3);
     exponentArr.push(itemExponeent);
-    return exponentArr;
+  }
+  );
 
+  return exponentArr;
 
-
-    };
-    )
   // Solution code here...
 };
 
@@ -29,8 +28,16 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
+  const output = [];
+  arr.map((item) => {
+    const itemPlusOne = item + 1;
+    output.push(itemPlusOne);
+  });
+
+  return output;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3

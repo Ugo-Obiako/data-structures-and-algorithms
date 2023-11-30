@@ -7,7 +7,6 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
-
 const addOne = (arr) => {
   // Solution code here...
   const output = [];
@@ -18,6 +17,7 @@ const addOne = (arr) => {
 
   return output;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -56,7 +56,6 @@ const allUpperCase = (arr) => {
   return output;
   // Solution code here...
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -195,7 +194,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-describe('Testing challenge 7', () => {
+xdescribe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {

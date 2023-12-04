@@ -161,8 +161,18 @@ CHALLENGE 8 - Stretch Goal
 Write a function named totalCharacters that takes in an array and returns the number of characters in the array.
 ------------------------------------------------------------------------------------------------ */
 
-const totalCharacters = (arr) => {arr.length;};
+const totalCharacters = (arr) => { 
 // Solution code here...
+  let total = 0;
+
+  arr.forEach((character) => {
+    if ('name' in character && typeof character.name === 'string') {
+      total += character.name.length; // Add the length of each character's name
+    }
+  });
+
+  return total;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal

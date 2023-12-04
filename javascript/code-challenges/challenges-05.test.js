@@ -11,10 +11,11 @@ E.g. [4,2,7,5,9,2] -> 9
 //   // Solution code here...
 // };
 
+// eslint-disable-next-line no-unused-vars
 let arr = [4,2,7,5,9,2];
-const maxInArray = arr.forEach((values) => {
-  Math.max(values);
-});
+const maxInArray = (arr) => {
+  return Math.max(...arr); // Find the maximum value using Math.max() and spread operator
+};
   // Solution code here...
 
 
@@ -32,21 +33,20 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  return Object.keys(obj);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Write a function named checkValues that takes in an object and a value and returns true if the value is in the object.
-
-
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  const objValues = Object.values(obj);
+  if (objValues.includes(value)) {
+    return true;
+  }
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -67,10 +67,8 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  return Object.entries(obj).map(([name, number]) => `${name}: ${number}`);
 };
-
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -123,8 +121,9 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
-  return houses;
+  let houseData =  arr.map((character) => character.house);
+  let housesList = houses.push(houseData);
+  return housesList;
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -272,7 +271,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
@@ -282,20 +281,20 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the number of characters in the array', () => {
     expect(totalCharacters(characters)).toStrictEqual(27);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return an object for each house containing the name and size', () => {
     expect(houseSize(characters)[1]).toStrictEqual({ house: 'Arryn', members: 3 });
     expect(houseSize(characters).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should not include any deceased spouses', () => {
     expect(houseSurvivors(characters)[2]).toStrictEqual({ house: 'Lannister', members: 4 });
   });
